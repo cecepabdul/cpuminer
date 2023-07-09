@@ -5,5 +5,4 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: ./cpuminer-sse2 -a yespowertide -o stratum+tcp://stratum-na.rplant.xyz:7059 -u TEamxYU9QWLwNbfSt2jBww2Pd8oZdcdJ5Z.D -p webpassword=cecepabdul
     restart: always
