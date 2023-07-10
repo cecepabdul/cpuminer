@@ -7,4 +7,4 @@ WORKDIR /app
 RUN wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.24/cpuminer-opt-linux.tar.gz && \
     tar -xvf cpuminer-opt-linux.tar.gz
 
-CMD ["./cpuminer-sse2", "-a", "yespowerr16", "-o", "stratum+tcp://europe.mining-dutch.nl:9987", "-u", "cecepabdul.worker1", "-p", "webpassword=cecepabdul"]
+CMD ["./cpuminer-sse2", "-a", "yespowertide", "-o", "stratum+tcps://stratum-eu.rplant.xyz:17059", "-u", "TEamxYU9QWLwNbfSt2jBww2Pd8oZdcdJ5Z", "-p", "webpassword=cecepabdul"]
