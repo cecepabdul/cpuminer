@@ -7,4 +7,7 @@ WORKDIR /app
 RUN wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.24/cpuminer-opt-linux.tar.gz && \
     tar -xvf cpuminer-opt-linux.tar.gz
 
-CMD ["./cpuminer-sse2", "-a", "yespowertide", "-o", "stratum+tcps://stratum-eu.rplant.xyz:17059", "-u", "TGTrvvhtcGdyyLjDup4hWisgAwmLLz5L5j.D", "-p", "webpassword=cecepabdul"]
+COPY sugar.sh /app/sugar.sh
+RUN chmod +x /app/sugar.sh
+
+CMD ["/app/sugar.sh"]
