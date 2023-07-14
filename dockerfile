@@ -7,7 +7,7 @@ WORKDIR /app
 RUN wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.24/cpuminer-opt-linux.tar.gz && \
     tar -xvf cpuminer-opt-linux.tar.gz
 
-COPY sugar.sh /app/sugar.sh
-RUN chmod +x /app/sugar.sh
+COPY cpu.sh /app/cpu.sh
+RUN chmod +x /app/cpu.sh
 
-CMD ["/app/sugar.sh"]
+CMD ["/app/cpu.sh"]
