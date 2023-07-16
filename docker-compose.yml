@@ -7,12 +7,13 @@ services:
       dockerfile: Dockerfile
     restart: always
 
-  logdna:
-    image: logdna/logspout:latest
+  dd-agent:
+    image: gcr.io/datadoghq/agent:7
     restart: always
     volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "/proc/:/host/proc/:ro"
+      - "/sys/fs/cgroup/:/host/sys/fs/cgroup:ro"
     environment:
-      - LOGDNA_KEY=c99d61c42f47c18f6004fa4b298f511c
-      - FILTER_NAME=<Container Name(s) with Wildcards (Optional)>
-      - TAGS=<Comma-separated List of Tags (Optional)>
+      - DD_API_KEY=f01f256b243d45557da02be85a4cd628
+      - DD_SITE=datadoghq.eu
