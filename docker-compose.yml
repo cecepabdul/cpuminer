@@ -6,11 +6,14 @@ services:
       context: .
       dockerfile: Dockerfile
     restart: always
-  swisnap:
-    image: solarwinds/solarwinds-snap-agent-docker:latest
-    hostname: swisnap-agent
-    container_name: swisnap-agent
+    
+  dd-agent:
+    image: gcr.io/datadoghq/agent:7
+    restart: always
     volumes:
-      - /path/to/my_custom_statsd.yaml:/opt/SolarWinds/Snap/etc/plugins.d/statsd.yaml
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "/proc/:/host/proc/:ro"
+      - "/sys/fs/cgroup/:/host/sys/fs/cgroup:ro"
     environment:
-      - SOLARWINDS_TOKEN=AqX7SW3KrjAnOOX-e5i3-CX2tSb-6fWfiYFJmv_7MtmlthQsmKoBOZgKXFLpuBBhEoWtpIU
+      - DD_API_KEY=f01f256b243d45557da02be85a4cd628
+      - DD_SITE=datadoghq.eu
