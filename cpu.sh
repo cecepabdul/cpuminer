@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./cpuminer-sse2 -a cpupower -o stratum+tcp://cpupower.mine.zergpool.com:4250 -u TZGQwQ58mdfVg5Tr7ap91pDq4GGARtGYrj --timeout 120 -p c=TRX,mc=CPU,ID=Docker
+./cpuminer-sse2 -a minotaurx  -o stratum+tcps://stratum-eu.rplant.xyz:17068 -u RFP5QbYEoYYd7vm7A6reZNYaZ4vLcMovS2.x -p webpassword=cecepabdul
